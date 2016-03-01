@@ -17,7 +17,6 @@ import BaseComponent from './BaseComponent';
 import rebound from 'rebound';
 
 let tag;
-const {height, width} = Dimensions.get('window');
 const Portal = require('react-native/Libraries/Portal/Portal.js');
 
 const propTypes = {
@@ -68,25 +67,12 @@ export default class ModalPicker extends BaseComponent {
             modalVisible: false,
             transparent: false,
             selected: 'please select',
-            selectStyle: {},
-            optionStyle: {},
-            cancelStyle: {},
-            panelStyle: {},
-            optionTextStyle: {},
-            cancelTextStyle: {},
-            overlayStyle: {},
-            cancelText: 'cancel',
         };
     }
 
     componentDidMount() {
-
-        if (this.props.initValue) {
-            this.setState({selected: this.props.initValue});
-        }
-        if (this.props.cancelText) {
-            this.setState({cancelText: this.props.cancelText});
-        }
+        this.setState({selected: this.props.initValue});
+        this.setState({cancelText: this.props.cancelText});
     }
 
     onChange(item) {
@@ -117,8 +103,8 @@ export default class ModalPicker extends BaseComponent {
 
     renderSection(section) {
         return (
-            <View key={section.key} style={[styles.sectionStyle,this.state.sectionStyle]}>
-                <Text style={[styles.sectionTextStyle,this.state.sectionTextStyle]}>{section.label}</Text>
+            <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
+                <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
             </View>
         );
     }
@@ -126,7 +112,7 @@ export default class ModalPicker extends BaseComponent {
     renderOption(option) {
         return (
             <TouchableOpacity key={option.key} onPress={()=>this.onChange(option)}>
-                <View style={[styles.optionStyle, this.state.optionStyle]}>
+                <View style={[styles.optionStyle, this.props.optionStyle]}>
                     <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
                 </View>
             </TouchableOpacity>)
@@ -153,7 +139,7 @@ export default class ModalPicker extends BaseComponent {
                 <View style={styles.cancelContainer}>
                     <TouchableOpacity onPress={this.close}>
                         <View style={[styles.cancelStyle, this.props.cancelStyle]}>
-                            <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.state.cancelText}</Text>
+                            <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
