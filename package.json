@@ -1,6 +1,6 @@
 {
   "name": "react-native-modal-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,10 +22,12 @@
     "react-component"
   ],
   "author": "Daniel Korger <dan@imake.io>",
-  "contributors": [{
-    "name": "Alex Spring",
-    "email": "notlose@hotmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Alex Spring",
+      "email": "notlose@hotmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/d-a-n/react-native-modal-picker/issues"
