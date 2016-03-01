@@ -5,7 +5,7 @@ import React, {
     View
 } from 'react-native';
 
-import SpringSelector from 'react-native-spring-selector'
+import ModalPicker from 'react-native-modal-picker'
 
 class SampleApp extends Component {
     render() {
@@ -31,7 +31,7 @@ class SampleApp extends Component {
 
         return (
             <View style={{padding:40, flex:1}}>
-                <SpringSelector
+                <ModalPicker
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }}

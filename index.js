@@ -51,7 +51,7 @@ const defaultProps = {
     cancelText: 'cancel'
 }
 
-export default class SpringSelector extends BaseComponent {
+export default class ModalPicker extends BaseComponent {
 
     constructor() {
 
@@ -191,5 +191,5 @@ export default class SpringSelector extends BaseComponent {
     }
 }
 
-SpringSelector.propTypes = propTypes;
-SpringSelector.defaultProps = defaultProps;
+ModalPicker.propTypes = propTypes;
+ModalPicker.defaultProps = defaultProps;
