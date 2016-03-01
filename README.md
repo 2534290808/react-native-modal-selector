@@ -1,6 +1,10 @@
 # react-native-modal-picker
 A cross-platform (iOS / Android), selector/picker component for React Native that is highly customizable and supports sections.
 
+## Demo
+
+<img src="https://raw.githubusercontent.com/d-a-n/react-native-modal-picker/master/docs/demo.gif" />
+
 ## Install
 
 ```sh
@@ -69,8 +73,3 @@ class SampleApp extends Component {
 * `selectStyle - object` optional, style definitions for the select element
 * `overlayStyle - object` optional, style definitions for the overly/background element
 * `selectStyle - object` optional, style definitions for the select element
-
-
-## Demo
-
-<img src="https://raw.githubusercontent.com/d-a-n/react-native-modal-picker/master/docs/demo.gif" />
