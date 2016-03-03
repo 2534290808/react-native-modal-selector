@@ -40,6 +40,7 @@ const defaultProps = {
     onChange: ()=> {
     },
     initValue: 'Select me!',
+    style: {},
     selectStyle: {},
     optionStyle: {},
     optionTextStyle: {},
