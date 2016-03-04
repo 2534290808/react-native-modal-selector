@@ -37,8 +37,7 @@ const propTypes = {
 
 const defaultProps = {
     data: [],
-    onChange: ()=> {
-    },
+    onChange: ()=> {},
     initValue: 'Select me!',
     style: {},
     selectStyle: {},
@@ -61,7 +60,8 @@ export default class ModalPicker extends BaseComponent {
         this._bind(
             'onChange',
             'open',
-            'close'
+            'close',
+            'renderChildren'
         );
 
         this.state = {
@@ -149,6 +149,20 @@ export default class ModalPicker extends BaseComponent {
             </View>);
     }
 
+    renderChildren() {
+
+        console.log(this.props.children);
+
+        if(this.props.children) {
+            return this.props.children;
+        }
+        return (
+            <View style={[styles.selectStyle, this.props.selectStyle]}>
+                <Text style={[styles.selectTextStyle, this.props.selectTextStyle]}>{this.state.selected}</Text>
+            </View>
+        );
+    }
+
     componentWillMount() {
         if (Platform.OS === 'android')
             tag = Portal.allocateTag();
@@ -170,9 +184,7 @@ export default class ModalPicker extends BaseComponent {
             <View style={this.props.style}>
                 {dp}
                 <TouchableOpacity onPress={this.open}>
-                    <View style={[styles.selectStyle, this.props.selectStyle]}>
-                        <Text style={[styles.selectTextStyle, this.props.selectTextStyle]}>{this.state.selected}</Text>
-                    </View>
+                    {this.renderChildren()}
                 </TouchableOpacity>
             </View>
         );

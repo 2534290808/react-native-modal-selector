@@ -2,14 +2,23 @@
 
 import React, {
     Component,
-    View
+    View,
+    TextInput
 } from 'react-native';
 
 import ModalPicker from 'react-native-modal-picker'
 
 class SampleApp extends Component {
-    render() {
 
+    constructor() {
+        super();
+
+        this.state = {
+            textInputValue: ''
+        }
+    }
+
+    render() {
         let index = 0;
         const data = [
             { key: index++, section: true, label: 'Fruits' },
@@ -30,12 +39,32 @@ class SampleApp extends Component {
         ];
 
         return (
-            <View style={{padding:40, flex:1}}>
+            <View style={{flex:1, justifyContent:'space-around', padding:50}}>
+
+                { /* Default mode: a clickable button will re rendered */ }
                 <ModalPicker
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }}
                 />
+
+                { /*
+                    Wrapper mode: just wrap your existing component with ModalPicker.
+                    When the user clicks on your element, the modal selector is shown.
+                 */ }
+                <ModalPicker
+                    data={data}
+                    initValue="Select something yummy!"
+                    onChange={(option)=>{ this.setState({textInputValue:option.label})}}
+                >
+                    <View>
+                        <TextInput
+                            style={{borderWidth:1, borderColor:'#ccc', padding:10, height:30}}
+                            editable={false}
+                            placeholder="Select something yummy!"
+                            value={this.state.textInputValue} />
+                    </View>
+                </ModalPicker>
             </View>
         );
     }

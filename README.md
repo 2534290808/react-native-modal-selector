@@ -13,7 +13,9 @@ npm i react-native-modal-picker --save
 
 ## Usage
 
-Here is an overview of the component usage.
+You can either use this component as an wrapper around your existing component or use it in its default mode. In default mode a customizable button is rendered.
+
+See `SampleApp` for an example how to use this component.
 
 ```jsx
 
@@ -22,8 +24,16 @@ import ModalPicker from 'react-native-modal-picker'
 [..]
 
 class SampleApp extends Component {
-    render() {
 
+    constructor() {
+        super();
+
+        this.state = {
+            textInputValue: ''
+        }
+    }
+
+    render() {
         let index = 0;
         const data = [
             { key: index++, section: true, label: 'Fruits' },
@@ -44,12 +54,27 @@ class SampleApp extends Component {
         ];
 
         return (
-            <View style={{padding:40, flex:1}}>
+            <View style={{flex:1, justifyContent:'space-around', padding:50}}>
+
                 <ModalPicker
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }}
                 />
+
+                <ModalPicker
+                    data={data}
+                    initValue="Select something yummy!"
+                    onChange={(option)=>{ this.setState({textInputValue:option.label})}}
+                >
+                    <View>
+                        <TextInput
+                            style={{borderWidth:1, borderColor:'#ccc', padding:10, height:30}}
+                            editable={false}
+                            placeholder="Select something yummy!"
+                            value={this.state.textInputValue} />
+                    </View>
+                </ModalPicker>
             </View>
         );
     }
@@ -63,14 +88,12 @@ class SampleApp extends Component {
 * `onChange - function` optional, callback function, when the users has selected an option
 * `initValue - string` optional, text that is initially shown on the button
 * `cancelText - string` optional, text of the cancel button
-* `selectStyle - object` optional, style definitions for the select element
-* `selectStyle - object` optional, style definitions for the select element
-* `optionStyle - object` optional, style definitions for the option element
-* `optionTextStyle - object` optional, style definitions for the option text element
+* `selectStyle - object` optional, style definitions for the select element (available in default mode only!)
+* `selectTextStyle - object` optional, style definitions for the select element (available in default mode only!)
+* `overlayStyle - object` optional, style definitions for the overly/background element
 * `sectionStyle - object` optional, style definitions for the section element
 * `sectionTextStyle - object` optional, style definitions for the select text element
+* `optionStyle - object` optional, style definitions for the option element
+* `optionTextStyle - object` optional, style definitions for the option text element
 * `cancelStyle - object` optional, style definitions for the cancel element
 * `cancelTextStyle - object` optional, style definitions for the cancel text element
-* `selectStyle - object` optional, style definitions for the select element
-* `overlayStyle - object` optional, style definitions for the overly/background element
-* `selectStyle - object` optional, style definitions for the select element
