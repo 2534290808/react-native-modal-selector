@@ -59,19 +59,19 @@ class SampleApp extends Component {
                 <ModalPicker
                     data={data}
                     initValue="Select something yummy!"
-                    onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }}
-                />
+                    onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }} />
 
                 <ModalPicker
                     data={data}
                     initValue="Select something yummy!"
-                    onChange={(option)=>{ this.setState({textInputValue:option.label})}}
-                >
+                    onChange={(option)=>{ this.setState({textInputValue:option.label})}}>
+                    
                     <TextInput
                         style={{borderWidth:1, borderColor:'#ccc', padding:10, height:30}}
                         editable={false}
                         placeholder="Select something yummy!"
                         value={this.state.textInputValue} />
+                        
                 </ModalPicker>
             </View>
         );
