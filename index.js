@@ -151,8 +151,6 @@ export default class ModalPicker extends BaseComponent {
 
     renderChildren() {
 
-        console.log(this.props.children);
-
         if(this.props.children) {
             return this.props.children;
         }
