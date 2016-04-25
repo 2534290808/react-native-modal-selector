@@ -17,6 +17,7 @@ import BaseComponent from './BaseComponent';
 import rebound from 'rebound';
 
 let tag;
+let componentIndex = 0;
 const Portal = require('react-native/Libraries/Portal/Portal.js');
 
 const propTypes = {
@@ -130,7 +131,7 @@ export default class ModalPicker extends BaseComponent {
         });
 
         return (
-            <View style={[styles.overlayStyle, this.props.overlayStyle]}>
+            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
                 <View style={styles.optionContainer}>
                     <ScrollView keyboardShouldPersistTaps>
                         <View style={{paddingHorizontal:10}}>
