@@ -1,6 +1,9 @@
 'use strict';
 
-import React, {
+import React,{
+    PropTypes
+} from 'react'
+import {
     View,
     StyleSheet,
     Dimensions,
@@ -8,8 +11,7 @@ import React, {
     Text,
     ScrollView,
     TouchableOpacity,
-    Platform,
-    PropTypes
+    Platform
 } from 'react-native';
 
 import styles from './style';
