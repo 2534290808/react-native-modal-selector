@@ -1,7 +1,8 @@
 'use strict';
 
-import React, {
-    Component,
+import React, { Component } from 'react';
+
+import {
     View,
     TextInput
 } from 'react-native';

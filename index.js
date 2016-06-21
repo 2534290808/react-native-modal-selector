@@ -2,7 +2,8 @@
 
 import React,{
     PropTypes
-} from 'react'
+} from 'react';
+
 import {
     View,
     StyleSheet,
@@ -16,7 +17,6 @@ import {
 
 import styles from './style';
 import BaseComponent from './BaseComponent';
-import rebound from 'rebound';
 
 let componentIndex = 0;
 
@@ -34,7 +34,7 @@ const propTypes = {
     cancelTextStyle: Text.propTypes.style,
     overlayStyle: View.propTypes.style,
     cancelText: PropTypes.string
-}
+};
 
 const defaultProps = {
     data: [],
@@ -50,7 +50,7 @@ const defaultProps = {
     cancelTextStyle: {},
     overlayStyle: {},
     cancelText: 'cancel'
-}
+};
 
 export default class ModalPicker extends BaseComponent {
 
@@ -69,7 +69,7 @@ export default class ModalPicker extends BaseComponent {
             animationType: 'slide',
             modalVisible: false,
             transparent: false,
-            selected: 'please select',
+            selected: 'please select'
         };
     }
 
