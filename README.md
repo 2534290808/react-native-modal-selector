@@ -67,13 +67,13 @@ class SampleApp extends Component {
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ this.setState({textInputValue:option.label})}}>
-                    
+
                     <TextInput
                         style={{borderWidth:1, borderColor:'#ccc', padding:10, height:30}}
                         editable={false}
                         placeholder="Select something yummy!"
                         value={this.state.textInputValue} />
-                        
+
                 </ModalPicker>
             </View>
         );
@@ -88,7 +88,8 @@ class SampleApp extends Component {
 * `onChange - function` optional, callback function, when the users has selected an option
 * `initValue - string` optional, text that is initially shown on the button
 * `cancelText - string` optional, text of the cancel button
-* `selectStyle - object` optional, style definitions for the select element (available in default mode only!)
+* `selectStyle - object` optional, style definitions for the select element (available in default mode only!).
+NOTE: Due to breaking changes in React Native, RN < 0.39.0 should pass `flex:1` explicitly to `selectStyle` as a prop.
 * `selectTextStyle - object` optional, style definitions for the select element (available in default mode only!)
 * `overlayStyle - object` optional, style definitions for the overly/background element
 * `sectionStyle - object` optional, style definitions for the section element
