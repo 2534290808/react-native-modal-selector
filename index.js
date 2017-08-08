@@ -55,7 +55,7 @@ const defaultProps = {
     keyboardShouldPersistTaps: 'always'
 };
 
-export default class ModalPicker extends BaseComponent {
+export default class ModalSelector extends BaseComponent {
 
     constructor() {
 
@@ -132,7 +132,7 @@ export default class ModalPicker extends BaseComponent {
         });
 
         return (
-            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
+            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalSelector'+(componentIndex++)}>
                 <View style={styles.optionContainer}>
                     <ScrollView keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}>
                         <View style={{paddingHorizontal:10}}>
@@ -182,5 +182,5 @@ export default class ModalPicker extends BaseComponent {
     }
 }
 
-ModalPicker.propTypes = propTypes;
-ModalPicker.defaultProps = defaultProps;
+ModalSelector.propTypes = propTypes;
+ModalSelector.defaultProps = defaultProps;

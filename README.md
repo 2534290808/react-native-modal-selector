@@ -1,6 +1,4 @@
-[![npm version](https://badge.fury.io/js/react-native-modal-picker.svg)](https://badge.fury.io/js/react-native-modal-picker)
-
-# react-native-modal-picker
+# react-native-modal-selector
 A cross-platform (iOS / Android), selector/picker component for React Native that is highly customizable and supports sections.
 
 ## Demo
@@ -10,7 +8,7 @@ A cross-platform (iOS / Android), selector/picker component for React Native tha
 ## Install
 
 ```sh
-npm i react-native-modal-picker --save
+npm i react-native-modal-selector --save
 ```
 
 ## Usage
@@ -21,7 +19,7 @@ See `SampleApp` for an example how to use this component.
 
 ```jsx
 
-import ModalPicker from 'react-native-modal-picker'
+import ModalSelector from 'react-native-modal-selector'
 
 [..]
 
@@ -58,12 +56,12 @@ class SampleApp extends Component {
         return (
             <View style={{flex:1, justifyContent:'space-around', padding:50}}>
 
-                <ModalPicker
+                <ModalSelector
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }} />
 
-                <ModalPicker
+                <ModalSelector
                     data={data}
                     initValue="Select something yummy!"
                     onChange={(option)=>{ this.setState({textInputValue:option.label})}}>
@@ -74,7 +72,7 @@ class SampleApp extends Component {
                         placeholder="Select something yummy!"
                         value={this.state.textInputValue} />
 
-                </ModalPicker>
+                </ModalSelector>
             </View>
         );
     }
