@@ -81,18 +81,19 @@ class SampleApp extends Component {
 
 ## Props
 
-* `data - []` required, array of objects with a unique key and label
-* `style - object` optional, style definitions for the root element
-* `onChange - function` optional, callback function, when the users has selected an option
-* `initValue - string` optional, text that is initially shown on the button
-* `cancelText - string` optional, text of the cancel button
-* `selectStyle - object` optional, style definitions for the select element (available in default mode only!).
+*   `data` (array, required) array of objects with a unique key and label
+*   `style` (object, optional) style definitions for the root element
+*   `onChange` (function, optional) callback function, when the users has selected an option
+*   `initValue` (string, optional) text that is initially shown on the button
+*   `cancelText` (string, optional) text of the cancel button
+*   `selectStyle` (object, optional) style definitions for the select element (available in default mode only!).
 NOTE: Due to breaking changes in React Native, RN < 0.39.0 should pass `flex:1` explicitly to `selectStyle` as a prop.
-* `selectTextStyle - object` optional, style definitions for the select element (available in default mode only!)
-* `overlayStyle - object` optional, style definitions for the overly/background element
-* `sectionStyle - object` optional, style definitions for the section element
-* `sectionTextStyle - object` optional, style definitions for the select text element
-* `optionStyle - object` optional, style definitions for the option element
-* `optionTextStyle - object` optional, style definitions for the option text element
-* `cancelStyle - object` optional, style definitions for the cancel element
-* `cancelTextStyle - object` optional, style definitions for the cancel text element
+*   `selectTextStyle` (object, optional) style definitions for the select element (available in default mode only!)
+*   `overlayStyle` (object, optional) style definitions for the overly/background element
+*   `sectionStyle` (object, optional) style definitions for the section element
+*   `sectionTextStyle` (object, optional) style definitions for the select text element
+*   `optionStyle` (object, optional) style definitions for the option element
+*   `optionTextStyle` (object, optional) style definitions for the option text element
+*   `cancelStyle` (object, optional) style definitions for the cancel element
+*   `cancelTextStyle` (object, optional) style definitions for the cancel text element
+*   `keyboardShouldPersistTaps` (string/bool, optional, default 'always') passed to underlying ScrollView

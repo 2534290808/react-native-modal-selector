@@ -1,7 +1,7 @@
 {
   "name": "react-native-modal-selector",
   "version": "0.0.17",
-  "description": "",
+  "description": "A cross-platform (iOS / Android), selector/picker component for React Native that is highly customizable and supports sections.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/peacechen/react-native-modal-selector.git"
+    "url": "git+https://github.com/peacechen/react-native-modal-selector.git"
   },
   "keywords": [
     "react-native",
@@ -27,18 +27,15 @@
   },
   "author": "Daniel Korger <dan@imake.io>",
   "contributors": [
-    {
-      "name": "Alex Spring",
-      "email": "notlose@hotmail.com"
-    },
-    {
-      "name": "Peace Chen",
-      "url": "https://github.com/peacechen"
-    }
+    "Alex Spring <notlose@hotmail.com>",
+    "Peace Chen (https://github.com/peacechen)"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/peacechen/react-native-modal-selector/issues"
   },
-  "homepage": "https://github.com/peacechen/react-native-modal-selector"
+  "homepage": "https://github.com/peacechen/react-native-modal-selector",
+  "directories": {
+    "doc": "docs"
+  }
 }
