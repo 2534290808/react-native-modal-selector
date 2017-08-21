@@ -9,28 +9,29 @@ import {
     Text,
     ScrollView,
     TouchableOpacity,
-    ViewPropTypes,
+    ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
 
 import styles from './style';
 import BaseComponent from './BaseComponent';
 
+const ViewPropTypes = RNViewPropTypes || View.propTypes;
+
 let componentIndex = 0;
-let rnVersion = Number.parseFloat(require('react-native/package.json').version);
 
 const propTypes = {
     data:                      PropTypes.array,
     onChange:                  PropTypes.func,
     initValue:                 PropTypes.string,
-    style:                     rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
-    selectStyle:               rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
-    optionStyle:               rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
+    style:                     ViewPropTypes.style,
+    selectStyle:               ViewPropTypes.style,
+    optionStyle:               ViewPropTypes.style,
     optionTextStyle:           Text.propTypes.style,
-    sectionStyle:              rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
+    sectionStyle:              ViewPropTypes.style,
     sectionTextStyle:          Text.propTypes.style,
-    cancelStyle:               rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
+    cancelStyle:               ViewPropTypes.style,
     cancelTextStyle:           Text.propTypes.style,
-    overlayStyle:              rnVersion >= 0.44 ? ViewPropTypes.style : View.propTypes.style,
+    overlayStyle:              ViewPropTypes.style,
     cancelText:                PropTypes.string,
     disabled:                  PropTypes.bool,
     supportedOrientations:     PropTypes.arrayOf(PropTypes.oneOf(['portrait', 'landscape', 'portrait-upside-down', 'landscape-left', 'landscape-right'])),
