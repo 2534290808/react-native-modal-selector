@@ -11,21 +11,21 @@ export default StyleSheet.create({
 
     overlayStyle: {
         flex:            1,
-        padding:         30,
+        padding:         '5%',
         justifyContent:  'center',
         backgroundColor: 'rgba(0,0,0,0.7)',
     },
 
     optionContainer: {
         borderRadius:    BORDER_RADIUS,
-        flex:            1,
+        flexShrink:      1,
         marginBottom:    8,
         padding:         PADDING,
         backgroundColor: 'rgba(255,255,255,0.8)',
     },
 
     cancelContainer: {
-        flex:      1,
+        flexGrow:  1,
         maxHeight: 30,
         alignSelf: 'stretch',
     },
