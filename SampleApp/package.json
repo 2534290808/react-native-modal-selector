@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "flow": "flow --show-all-errors",
     "test": "jest",
+    "postinstall": "rm -rf node_modules/react-native-modal-selector/SampleApp",
     "nodemon": "nodemon nodemon.json"
   },
   "dependencies": {
