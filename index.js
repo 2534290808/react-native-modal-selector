@@ -10,6 +10,7 @@ import {
     ScrollView,
     TouchableOpacity,
     TouchableWithoutFeedback,
+    Platform,
     ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
 
@@ -100,9 +101,12 @@ export default class ModalSelector extends BaseComponent {
     }
 
     onChange(item) {
-        rnVersion < 0.50 && this.props.onChange(item);
+        if (Platform.OS === 'android' || rnVersion < 0.50) {
+          // RN >= 0.50 on iOS comes with the onDismiss prop for Modal which solves RN issue #10471
+          this.props.onChange(item)
+        }
         this.setState({selected: item.label, changedItem: item });
-        this.close()
+        this.close();
     }
 
     close() {
