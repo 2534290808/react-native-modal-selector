@@ -40,13 +40,13 @@ class SampleApp extends Component {
         ];
 
         return (
-            <View style={{flex:1, justifyContent:'space-around', padding:50}}>
+            <View style={{ flex: 1, justifyContent: 'space-around', padding: 50 }}>
 
                 { /* Default mode: a clickable button will re rendered */ }
                 <ModalSelector
                     data={data}
                     initValue="Select something yummy!"
-                    onChange={(option)=>{ alert(`${option.label} (${option.key}) nom nom nom`) }}/>
+                    onChange={option => { alert(`${option.label} (${option.key}) nom nom nom`) }} />
 
                 { /*
                     Wrapper mode: just wrap your existing component with ModalSelector.
@@ -55,10 +55,10 @@ class SampleApp extends Component {
                 <ModalSelector
                     data={data}
                     initValue="Select something yummy!"
-                    onChange={(option)=>{ this.setState({textInputValue:option.label})}}>
+                    onChange={option => { this.setState({textInputValue:option.label}) }}>
 
                     <TextInput
-                        style={{borderWidth:1, borderColor:'#ccc', padding:10, height:30}}
+                        style={{ borderWidth: 1, borderColor: '#ccc', padding: 10, height: 40 }}
                         editable={false}
                         placeholder="Select something yummy!"
                         value={this.state.textInputValue} />
