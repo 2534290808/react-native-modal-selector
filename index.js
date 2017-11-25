@@ -20,7 +20,6 @@ import BaseComponent from './BaseComponent';
 const ViewPropTypes = RNViewPropTypes || View.propTypes;
 
 let componentIndex = 0;
-let rnVersion = Number.parseFloat(require('react-native/package.json').version);
 
 const propTypes = {
     data:                      PropTypes.array,
@@ -101,7 +100,7 @@ export default class ModalSelector extends BaseComponent {
     }
 
     onChange(item) {
-        if (Platform.OS === 'android' || rnVersion < 0.50) {
+        if (Platform.OS === 'android' || !Modal.propTypes.onDismiss) {
           // RN >= 0.50 on iOS comes with the onDismiss prop for Modal which solves RN issue #10471
           this.props.onChange(item)
         }
