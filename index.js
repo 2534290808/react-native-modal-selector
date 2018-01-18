@@ -127,7 +127,6 @@ export default class ModalSelector extends BaseComponent {
     renderSection(section) {
         return (
             <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
-                <Icon name={section.iconName ? section.iconName : 'md-help-circle'} style={section.iconStyle ? section.iconStyle : { 'fontSize' : '25','color' : 'rgba(255, 255, 255, .5)'}} />
                 <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
             </View>
         );
@@ -138,6 +137,7 @@ export default class ModalSelector extends BaseComponent {
             <TouchableOpacity key={option.key} onPress={() => this.onChange(option)}>
                 <View style={[styles.optionStyle, this.props.optionStyle, isLastItem &&
                 {borderBottomWidth: 0}]}>
+                    <Icon name={this.props.data.iconName ? this.props.data.iconName : 'md-help-circle'} style={this.props.data.iconStyle ? this.props.data.iconStyle : { 'fontSize' : '25','color' : 'rgba(255, 255, 255, .5)'}} />
                     <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
                 </View>
             </TouchableOpacity>);
