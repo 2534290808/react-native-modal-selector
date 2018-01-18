@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from 'react-native';
 
 import {
     View,
@@ -126,6 +127,7 @@ export default class ModalSelector extends BaseComponent {
     renderSection(section) {
         return (
             <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
+                <Icon name={section.iconName ? section.iconName : 'md-help-circle'} style={section.iconStyle ? section.iconStyle : { 'fontSize' : '25','color' : 'rgba(255, 255, 255, .5)'}} />
                 <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
             </View>
         );

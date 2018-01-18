@@ -1,6 +1,6 @@
 {
   "name": "react-native-modal-selector",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "A cross-platform (iOS / Android), selector/picker component for React Native that is highly customizable and supports sections.",
   "main": "index.js",
   "scripts": {
@@ -39,6 +39,10 @@
   "homepage": "https://github.com/peacechen/react-native-modal-selector",
   "directories": {
     "doc": "docs"
+  },
+  "peerDependencies": {
+    "@expo/vector-icons": "6.2.0",
+    "react-native": "0.50.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
