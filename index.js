@@ -126,7 +126,7 @@ export default class ModalSelector extends BaseComponent {
 
     renderSection(section) {
         return (
-            <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle
+            <View key={section.key} style={[styles.sectionStyle,this.props.sectionStyle]}>
                 <Icon name={section.iconName} style={{ color: 'white', fontSize: 24 }} />
                 <Text style={[styles.sectionTextStyle,this.props.sectionTextStyle]}>{section.label}</Text>
             </View>
